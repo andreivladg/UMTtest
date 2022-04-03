@@ -1,0 +1,16 @@
+Since there must be 2 subsets with the same avg we can write the following relation: sum(A)/nA = sum(B)/nB, where nA
+and nB are the number of elements in each subse. The right side of the relation can be rewritten as 
+(sum-sum(A))/(n-nA), where sum is the sum of all elements in the initial set and n is total number of elements.
+From this we can deduce that sum(A) = nA*sum/n. We can verify the possibility of obtaining such subsets by verifying for
+each number of elements smaller than n, if (i*sum)%n == 0. If it is true, then we can proceed, otherwise, it is 
+impossible to have 2 subsets with the same average.
+First we compute the sum of all elements and the average of the initial set, which will have to also be the average of 
+our two sets.
+Then, we create a structure in which we correlate the sum of elements with the number of elements that make up that sum.
+We initialize the sum 0 with 0 number of elements.
+Then, for each number in the initial array, the sum will be the respective number, and number of elements 1, 
+then for each sum of every pair of 2 numbers and so on.
+We look through the structure for a number of elements that is smaller than the length of the initial array, and check 
+if the average for that for that number is equal to the one that we are looking for. If it is than we return true. 
+
+
